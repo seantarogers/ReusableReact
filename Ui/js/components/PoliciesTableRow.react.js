@@ -3,12 +3,12 @@
 export default class PoliciesTableRow extends Component {
     constructor(props) {
         super(props);  
-        this.handleSelected = this.handleSelected.bind(this);
+        this.handleRowSelected = this.handleRowSelected.bind(this);
         this.displayName = 'PoliciesTableRow.react';
     }
-    handleSelected() {
-        const checked = this.refs.checkbox. getDOMNode().checked;
-        this.props.handleSelected({selected: checked, id: this.props.policy.id});            
+    handleRowSelected() {
+        const checked = this.refs.checkbox.getDOMNode().checked;
+        this.props.handleSelected({selected: !checked, id: this.props.policy.id});            
     }
     render() {
 
@@ -16,11 +16,11 @@ export default class PoliciesTableRow extends Component {
             return null;
         }
         
-            return(<tr key={this.props.policy.id} >
+        return(<tr onClick={this.handleRowSelected} key={this.props.policy.id} >
                         <td>{this.props.policy.id}</td>
                         <td>{this.props.policy.insurer}</td>
                         <td> {this.props.policy.outstandingAmount}</td>
-                        <td><input type='checkbox' onChange={this.handleSelected} ref='checkbox' checked={this.props.policy.selected} /></td>
+                        <td><input type='checkbox' ref='checkbox' checked={this.props.policy.selected} /></td>
                 </tr>);     
     }
 }
