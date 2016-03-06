@@ -1,6 +1,7 @@
 ﻿import React, { Component } from 'react';
 import { BrowserHistory } from 'react-router'
 
+import GetCustomerWithPolicySelectionsQuery from '../../queries/GetCustomerWithPolicySelectionsQuery';
 import CustomerStore from '../../stores/CustomerStore';
 import PolicySelectedStore from '../../stores/PolicySelectedStore';
 
@@ -21,13 +22,17 @@ export default class CustomerController extends Component {
         CustomerStore.removeChangeListener(this.onChange);
         PolicySelectedStore.removeChangeListener(this.onChange);
     }
-    handlePolicySelected(policyId) {
-        PolicyActionCreator.policySelected(policyId);
+    handlePolicySelected(selectedPolicy) {
+        if (selectedPolicy.selected) {
+            PolicyActionCreator.policySelected(selectedPolicy);
+            return;
+        }
+
+        PolicyActionCreator.policyUnselected(selectedPolicy);        
     }
     onChange() {
-        const  customer = CustomerStore.get();
-        const policySelected = PolicySelectedStore.get();
 
+        const customer = GetCustomerWithPolicySelectionsQuery.execute();
         this.setState({
             customer: customer,
             customerName: customer.name 
@@ -35,7 +40,7 @@ export default class CustomerController extends Component {
 
     }
     render() {
-        return (<PoliciesTable {...this.state} />);
+        return (<PoliciesTable {...this.state} handleSelected={this.handlePolicySelected} />);
     }
 }
 

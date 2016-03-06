@@ -5,7 +5,6 @@ import PoliciesTableRow from './PoliciesTableRow.react';
 export default class PoliciesTable extends Component {
     constructor(props) {
         super(props);  
-        this.handleSelected = this.handleSelected.bind(this);
         this.renderRows = this.renderRows.bind(this);
         this.displayName = 'PoliciesTable.react';
     }
@@ -18,7 +17,7 @@ export default class PoliciesTable extends Component {
         }
         
         return  this.props.customer.policies.map((policy) => {
-            return(<PoliciesTableRow handleSelected={this.handleSelected} policy={policy} />);
+            return(<PoliciesTableRow handleSelected={this.props.handleSelected} policy={policy} />);
      });
     }
     render() {

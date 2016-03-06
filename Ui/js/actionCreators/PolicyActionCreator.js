@@ -2,11 +2,18 @@
 import AppConstants from '../constants/AppConstants';
 
 const PolicyActionCreator = {
-    policySelected: (policyId) => {
+    policySelected: (selectedPolicy) => {
         
         AppDispatcher.dispatch({
             actionType: AppConstants.POLICY_SELECTED,
-            data: policyId
+            data: selectedPolicy.id
+        });
+    },
+    policyUnselected: (unSelectedPolicy) => {
+        
+        AppDispatcher.dispatch({
+            actionType: AppConstants.POLICY_UNSELECTED,
+            data: unSelectedPolicy.id
         });
     }
 };
