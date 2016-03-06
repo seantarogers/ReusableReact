@@ -4,7 +4,7 @@ import { Router, Route, browserHistory, IndexRoute } from 'react-router'
 
 import GetCustomerQuery from './queries/GetCustomerQuery';
 import CustomerController1 from './controllers/financeProvider1/CustomerController.react';
-import CustomerController2 from './controllers/financeProvider1/CustomerController.react';
+import CustomerController2 from './controllers/financeProvider2/CustomerController.react';
 
 function _customerEnter() {
     GetCustomerQuery.execute();
