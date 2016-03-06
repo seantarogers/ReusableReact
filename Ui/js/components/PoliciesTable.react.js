@@ -11,7 +11,9 @@ export default class PoliciesTable extends Component {
     renderRows() {
 
         if (this.props.customer === undefined ||
-            this.props.customer.policies == undefined ||
+            this.props.customer === null ||
+            this.props.customer.policies === undefined ||
+            this.props.customer.policies === null ||
             this.props.customer.policies.length === 0) {
             return null;
         }

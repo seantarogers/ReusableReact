@@ -70,6 +70,7 @@
     <Content Include="js\components\Header.react.js" />
     <Content Include="js\components\PoliciesTableRow.react.js" />
     <Content Include="js\components\PoliciesTable.react.js" />
+    <Content Include="js\higherOrderComponents\StoreManager.js" />
     <Content Include="js\queries\GetCustomerWithPolicySelectionsQuery.js" />
     <Content Include="js\stores\PolicySelectedStore.js" />
     <Content Include="packages.config" />
