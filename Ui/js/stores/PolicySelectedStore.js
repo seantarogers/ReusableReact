@@ -17,7 +17,6 @@ function _addPolicySelected(selectedPolicyId) {
 function _removePolicySelected(unselectedPolicyId) {
     
     if (R.contains(unselectedPolicyId, _policiesSelected)) {
-
         _policiesSelected = _policiesSelected.filter((policySelected) => {
             return policySelected !== unselectedPolicyId;            
         });

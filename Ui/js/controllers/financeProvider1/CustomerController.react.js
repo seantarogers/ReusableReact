@@ -6,6 +6,7 @@ import CustomerStore from '../../stores/CustomerStore';
 import PolicySelectedStore from '../../stores/PolicySelectedStore';
 
 import PoliciesTable from '../../components/PoliciesTable.react';
+import Header from '../../components/Header.react';
 import PolicyActionCreator from '../../actionCreators/PolicyActionCreator';
 
 export default class CustomerController extends Component {
@@ -13,6 +14,7 @@ export default class CustomerController extends Component {
         super(props);  
         this.onChange = this.onChange.bind(this);
         this.displayName = 'CustomerController.react';
+        this.state = {customer: {}};
     }
     componentDidMount() {
         CustomerStore.addChangeListener(this.onChange);
@@ -40,7 +42,14 @@ export default class CustomerController extends Component {
 
     }
     render() {
-        return (<PoliciesTable {...this.state} handleSelected={this.handlePolicySelected} />);
+        return (
+            <div className='container'>
+                <div className='row'>
+                    <Header customerName={this.state.customerName} financeProviderName='financeProvider1' />
+                    <PoliciesTable {...this.state} handleSelected={this.handlePolicySelected} />
+                </div>
+            </div>
+        );
     }
 }
 

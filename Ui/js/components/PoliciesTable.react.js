@@ -22,11 +22,7 @@ export default class PoliciesTable extends Component {
     }
     render() {
 
-        return (<div className='container'>
-                <div className='row'>
-                    <h2 className='bordered'>Select policies to finance</h2>
-                    <h4 className='muted'>Customer: {this.props.customerName}</h4>
-                    <table className='table table-hover table-striped table-bordered'>
+        return (<table className='table table-hover table-striped table-bordered'>
                     <thead><tr>
                     <th>Policy Reference</th>
                     <th>Insurer</th>
@@ -34,8 +30,6 @@ export default class PoliciesTable extends Component {
                     <th>Select</th>
                     </tr></thead>
                     <tbody>{this.renderRows()}</tbody>
-                    </table>
-                </div>
-            </div>);
+                    </table>);
     }
 }

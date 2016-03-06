@@ -1,28 +1,54 @@
 ﻿import React, { Component } from 'react';
 import { BrowserHistory } from 'react-router'
 
-import CustomerStore from '../stores/CustomerStore';
+import GetCustomerWithPolicySelectionsQuery from '../../queries/GetCustomerWithPolicySelectionsQuery';
+import CustomerStore from '../../stores/CustomerStore';
+import PolicySelectedStore from '../../stores/PolicySelectedStore';
+
+import PoliciesTable from '../../components/PoliciesTable.react';
+import Header from '../../components/Header.react';
+import PolicyActionCreator from '../../actionCreators/PolicyActionCreator';
 
 export default class CustomerController extends Component {
     constructor(props) {
         super(props);  
+        this.onChange = this.onChange.bind(this);
         this.displayName = 'CustomerController.react';
+        this.state = {customer: {}};
     }
     componentDidMount() {
-        console.log('did mount');
         CustomerStore.addChangeListener(this.onChange);
+        PolicySelectedStore.addChangeListener(this.onChange);
     }
     componentWillUnmount() {
         CustomerStore.removeChangeListener(this.onChange);
+        PolicySelectedStore.removeChangeListener(this.onChange);
+    }
+    handlePolicySelected(selectedPolicy) {
+        if (selectedPolicy.selected) {
+            PolicyActionCreator.policySelected(selectedPolicy);
+            return;
+        }
+
+        PolicyActionCreator.policyUnselected(selectedPolicy);        
     }
     onChange() {
-        console.log('on change');
-        var customer = CustomerStore.get();
-        console.log(customer.firstName);
 
+        const customer = GetCustomerWithPolicySelectionsQuery.execute();
+        this.setState({
+            customer: customer,
+            customerName: customer.name 
+        });
     }
     render() {
-        return (<div> 'in customer' </div>);
+        return (
+            <div className='container'>
+                <div className='row'>
+                    <Header customerName={this.state.customerName} financeProviderName='financeProvider2' />
+                    <PoliciesTable {...this.state} handleSelected={this.handlePolicySelected} />
+                </div>
+            </div>
+        );
     }
 }
 

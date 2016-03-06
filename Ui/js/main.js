@@ -3,7 +3,8 @@ import {render} from 'react-dom';
 import { Router, Route, browserHistory, IndexRoute } from 'react-router'
 
 import GetCustomerQuery from './queries/GetCustomerQuery';
-import CustomerController from './controllers/financeProvider1/CustomerController.react';
+import CustomerController1 from './controllers/financeProvider1/CustomerController.react';
+import CustomerController2 from './controllers/financeProvider1/CustomerController.react';
 
 function _customerEnter() {
     GetCustomerQuery.execute();
@@ -11,7 +12,8 @@ function _customerEnter() {
 
 render(
     <Router history={browserHistory}>
-    <Route path='/' component={CustomerController} onEnter={_customerEnter} />         
+    <Route path='/1' component={CustomerController1} onEnter={_customerEnter} />         
+    <Route path='/2' component={CustomerController2} onEnter={_customerEnter} />         
     </Router>, document.getElementById('app'));
    
 
