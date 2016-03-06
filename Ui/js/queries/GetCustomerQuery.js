@@ -3,7 +3,7 @@
 import  CustomerActionCreator from '../actionCreators/CustomerActionCreator';
 
 //inject httpclient in to queries
-const fetch = createFetch(
+const _fetch = createFetch(
     base('http://localhost:3443/api/'), 
     auth('Bearer ' + 'atoken'),
     header('Content-Type', 'application/json'),
@@ -15,11 +15,8 @@ const fetch = createFetch(
 const GetCustomerQuery = {
     execute: () => {
 
-        fetch('customer/1').then(response => {
-                console.log('received data from server');
+        _fetch('customer/1').then(response => {
                 CustomerActionCreator.customerRecevied(response.jsonData);
-            
-                console.log(response.jsonData);
             })
             .catch(ex => {
                 console.log(`boom: ${ex}`);

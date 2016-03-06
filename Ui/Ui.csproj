@@ -66,6 +66,10 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="js\actionCreators\PolicyActionCreator.js" />
+    <Content Include="js\components\PoliciesTableRow.react.js" />
+    <Content Include="js\components\PoliciesTable.react.js" />
+    <Content Include="js\stores\PolicySelectedStore.js" />
     <Content Include="packages.config" />
     <Content Include="js\package.json" />
     <None Include="Web.Debug.config">
@@ -78,7 +82,8 @@
   <ItemGroup>
     <Content Include="js\actionCreators\CustomerActionCreator.js" />
     <Content Include="js\constants\AppConstants.js" />
-    <Content Include="js\controllers\CustomerController.react.js" />
+    <Content Include="js\controllers\financeProvider1\CustomerController.react.js" />
+    <Content Include="js\controllers\financeProvider2\CustomerController.react.js" />
     <Content Include="js\css\bootstrap.css" />
     <Content Include="js\css\bootstrap.min.css" />
     <Content Include="js\css\Site.css" />
@@ -95,8 +100,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="js\components\financeProvider\" />
-    <Folder Include="js\components\generic\" />
     <Folder Include="js\dist\" />
   </ItemGroup>
   <PropertyGroup>

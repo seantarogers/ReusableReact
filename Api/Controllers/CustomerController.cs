@@ -24,20 +24,21 @@
                             AddressLine4 = "address4",
                             AddressLine5 = "address5",
                             PostCode = "postcode",
-                            FirstName = "sean",
-                            LastName = "rogers",
+                            Name = "Sean Rogers",
                             Policies =
                                 new List<PolicyDto>
                                     {
                                         new PolicyDto
                                             {
                                                 Id = 1,
+                                                Insurer = "AXA",
                                                 Name = "Policy1",
                                                 OutstandingAmount = 1000.00M
                                             },
                                         new PolicyDto
                                             {
                                                 Id = 2,
+                                                Insurer = "Zurich",
                                                 Name = "Policy2",
                                                 OutstandingAmount = 2000.00M
                                             },
@@ -45,6 +46,7 @@
                                             {
                                                 Id = 3,
                                                 Name = "Policy3",
+                                                Insurer = "Aviva",
                                                 OutstandingAmount = 3000.00M
                                             },
                                     }
