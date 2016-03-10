@@ -8,7 +8,7 @@ import PolicySelectedStore from '../../stores/PolicySelectedStore';
 import PoliciesTable from '../../components/PoliciesTable.react';
 import Header from '../../components/Header.react';
 import ControllerDecorator from '../ControllerDecorator.react'
-import EventHandlers from '../EventHandlers';
+import EventHandlers from '../../events/EventHandlers';
 
 class CustomerController extends Component {
     constructor(props) {
