@@ -9,9 +9,9 @@ npm install
 ```
 2. Run the UI
 ```javascript
-webpack-dev-server --progress --colors --history-api-fallback
+webpack-dev-server --history-api-fallback
 ```
-3. Run the API 
+3. Run the API via visual studio IIS express
 
 
 
