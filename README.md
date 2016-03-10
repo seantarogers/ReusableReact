@@ -11,7 +11,7 @@ npm install
 ```javascript
 webpack-dev-server --history-api-fallback
 ```
- * Run the API via IIS express in Visual Studio
+ * Run the API via IIS Express in Visual Studio
 
 
 
