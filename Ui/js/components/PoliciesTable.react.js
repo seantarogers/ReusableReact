@@ -10,15 +10,15 @@ export default class PoliciesTable extends Component {
     }
     renderRows() {
 
-        if (this.props.customer === undefined ||
-            this.props.customer === null ||
-            this.props.customer.policies === undefined ||
-            this.props.customer.policies === null ||
-            this.props.customer.policies.length === 0) {
+        if (this.props.data === undefined ||
+            this.props.data === null ||
+            this.props.data.policies === undefined ||
+            this.props.data.policies === null ||
+            this.props.data.policies.length === 0) {
             return null;
         }
         
-        return  this.props.customer.policies.map((policy) => {
+        return  this.props.data.policies.map((policy) => {
             return(<PoliciesTableRow handleSelected={this.props.handleSelected} policy={policy} />);
      });
     }

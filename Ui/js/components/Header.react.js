@@ -1,7 +1,10 @@
 ﻿import React, { Component } from 'react';
 
 export default class Header extends Component {
-
+    constructor(props) {
+        super(props);
+        this.displayName = 'Header.react';        
+    }
     render() {
 
         return (<div><h2 className='bordered'>Select policies to finance</h2>

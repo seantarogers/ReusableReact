@@ -66,11 +66,12 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="js\controllers\ControllerDecorator.react.js" />
+    <Content Include="js\dist\bundle.js" />
     <Content Include="js\actionCreators\PolicyActionCreator.js" />
     <Content Include="js\components\Header.react.js" />
     <Content Include="js\components\PoliciesTableRow.react.js" />
     <Content Include="js\components\PoliciesTable.react.js" />
-    <Content Include="js\higherOrderComponents\StoreManager.js" />
     <Content Include="js\queries\GetCustomerWithPolicySelectionsQuery.js" />
     <Content Include="js\services\HttpClient.js" />
     <Content Include="js\stores\PolicySelectedStore.js" />
@@ -103,9 +104,7 @@
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="js\dist\" />
-  </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

@@ -2,9 +2,11 @@
 import  CustomerActionCreator from '../actionCreators/CustomerActionCreator';
 
 const GetCustomerQuery = {
-    execute: () => {
-        const get = HttpClient.get();        
-        get('customer/1').then(response => {
+    execute: (financeProviderId) => {
+        const get = HttpClient.get();
+        const url = `customer/${financeProviderId}`; 
+
+        get(url).then(response => {
                 CustomerActionCreator.customerRecevied(response.jsonData);
             })
             .catch(ex => {

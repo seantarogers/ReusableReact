@@ -7,22 +7,14 @@ import PolicySelectedStore from '../../stores/PolicySelectedStore';
 
 import PoliciesTable from '../../components/PoliciesTable.react';
 import Header from '../../components/Header.react';
-import PolicyActionCreator from '../../actionCreators/PolicyActionCreator';
+import ControllerDecorator from '../ControllerDecorator.react'
+import PolicyActionCreator from '../../actionCreators/PolicyActionCreator'
 
-export default class CustomerController extends Component {
+class CustomerController extends Component {
     constructor(props) {
-        super(props);  
-        this.onChange = this.onChange.bind(this);
+        super(props);
         this.displayName = 'CustomerController.react';
-        this.state = {customer: {}};
-    }
-    componentDidMount() {
-        CustomerStore.addChangeListener(this.onChange);
-        PolicySelectedStore.addChangeListener(this.onChange);
-    }
-    componentWillUnmount() {
-        CustomerStore.removeChangeListener(this.onChange);
-        PolicySelectedStore.removeChangeListener(this.onChange);
+        this.state = { data: {} };
     }
     handlePolicySelected(selectedPolicy) {
         if (selectedPolicy.selected) {
@@ -32,25 +24,29 @@ export default class CustomerController extends Component {
 
         PolicyActionCreator.policyUnselected(selectedPolicy);        
     }
-    onChange() {
-
-        const customer = GetCustomerWithPolicySelectionsQuery.execute();
-        this.setState({
-            customer: customer,
-            customerName: customer.name 
-        });
-    }
     render() {
+        const customerName = this.props.data ? this.props.data.name : '';
+
         return (
             <div className='container'>
                 <div className='row'>
-                    <Header customerName={this.state.customerName} financeProviderName='financeProvider2' />
-                    <PoliciesTable {...this.state} handleSelected={this.handlePolicySelected} />
+                    <Header customerName={customerName} financeProviderName='financeProvider2' />
+                    <PoliciesTable {...this.props} handleSelected={this.handlePolicySelected} />
                 </div>
             </div>
         );
     }
 }
+
+export default ControllerDecorator.decorate(
+    CustomerController, 
+    [CustomerStore, PolicySelectedStore],
+    () => GetCustomerWithPolicySelectionsQuery.execute());
+
+
+//what is the common stuff 
+//what is the specific stuff
+
 
 
 //import React from 'react';
