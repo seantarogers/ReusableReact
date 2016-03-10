@@ -8,21 +8,13 @@ import PolicySelectedStore from '../../stores/PolicySelectedStore';
 import PoliciesTable from '../../components/PoliciesTable.react';
 import Header from '../../components/Header.react';
 import ControllerDecorator from '../ControllerDecorator.react'
-import PolicyActionCreator from '../../actionCreators/PolicyActionCreator'
+import EventHandlers from '../EventHandlers';
 
 class CustomerController extends Component {
     constructor(props) {
         super(props);
         this.displayName = 'CustomerController.react';
         this.state = { data: {} };
-    }
-    handlePolicySelected(selectedPolicy) {
-        if (selectedPolicy.selected) {
-            PolicyActionCreator.policySelected(selectedPolicy);
-            return;
-        }
-
-        PolicyActionCreator.policyUnselected(selectedPolicy);        
     }
     render() {
         const customerName = this.props.data ? this.props.data.name : '';
@@ -31,7 +23,7 @@ class CustomerController extends Component {
             <div className='container'>
                 <div className='row'>
                     <Header customerName={customerName} financeProviderName='financeProvider1' />
-                    <PoliciesTable {...this.props} handleSelected={this.handlePolicySelected} />
+                    <PoliciesTable {...this.props} handleSelected={EventHandlers.handlePolicySelected} />
                 </div>
             </div>
         );
@@ -42,8 +34,3 @@ export default ControllerDecorator.decorate(
     CustomerController, 
     [CustomerStore, PolicySelectedStore],
     () => GetCustomerWithPolicySelectionsQuery.execute());
-
-//export default ControllerManager.decorateController(
-//    CustomerController, 
-//    [CustomerStore, PolicySelectedStore],
-//    () => GetCustomerWithPolicySelectionsQuery.execute());

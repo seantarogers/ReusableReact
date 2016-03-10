@@ -67,6 +67,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="js\controllers\ControllerDecorator.react.js" />
+    <Content Include="js\controllers\EventHandlers.js" />
     <Content Include="js\dist\bundle.js" />
     <Content Include="js\actionCreators\PolicyActionCreator.js" />
     <Content Include="js\components\Header.react.js" />
