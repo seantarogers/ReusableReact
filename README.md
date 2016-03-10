@@ -7,7 +7,7 @@ Simple SPA to experiment with composition via higher order components, with the 
 ```javascript
 npm install
 ```
- * Run the UI
+ * Run the UI via webpack
 ```javascript
 webpack-dev-server --history-api-fallback
 ```
