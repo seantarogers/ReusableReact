@@ -3,15 +3,15 @@ Simple SPA to experiment with composition via higher order components, with the 
 
 ## To run application
 
-1. Install the packages
+ * Install the packages
 ```javascript
 npm install
 ```
-1. Run the UI
+ * Run the UI
 ```javascript
 webpack-dev-server --history-api-fallback
 ```
-1. Run the API via visual studio IIS express
+ * Run the API via IIS express in Visual Studio
 
 
 
