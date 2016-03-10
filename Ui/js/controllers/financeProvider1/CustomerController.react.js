@@ -34,3 +34,4 @@ export default ControllerDecorator.decorate(
     CustomerController, 
     [CustomerStore, PolicySelectedStore],
     () => GetCustomerWithPolicySelectionsQuery.execute());
+
