@@ -7,11 +7,11 @@ Simple SPA to experiment with composition via higher order components, with the 
 ```javascript
 npm install
 ```
-2. Run the UI
+1. Run the UI
 ```javascript
 webpack-dev-server --history-api-fallback
 ```
-3. Run the API via visual studio IIS express
+1. Run the API via visual studio IIS express
 
 
 
