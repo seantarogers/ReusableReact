@@ -11,7 +11,6 @@ npm install
 ```javascript
 npm run start
 ```
-and browse to http://localhost:8080/1
  * Run the API via IIS Express in Visual Studio
 
 ## Credits
