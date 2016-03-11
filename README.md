@@ -15,7 +15,7 @@ webpack-dev-server --history-api-fallback
 
 ## Credits
 
-[Based on](https://github.com/gaearon/flux-react-router-example)
+[Decorator pattern based on](https://github.com/gaearon/flux-react-router-example)
 
 
 
