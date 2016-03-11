@@ -13,5 +13,9 @@ webpack-dev-server --history-api-fallback
 ```
  * Run the API via IIS Express in Visual Studio
 
+## Credits
+
+[Based on](https://github.com/gaearon/flux-react-router-example)
+
 
 
