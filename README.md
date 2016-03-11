@@ -9,7 +9,7 @@ npm install
 ```
  * Run the UI via webpack
 ```javascript
-webpack-dev-server --history-api-fallback
+npm run start
 ```
  * Run the API via IIS Express in Visual Studio
 
