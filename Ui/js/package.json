@@ -4,7 +4,8 @@
   "description": "reusable react",
   "main": "app.js",
   "scripts": {
-    "test": "test"
+    "test": "test",
+    "start" : "webpack-dev-server --progress --colors --history-api-fallback"
   },
   "repository": {
     "type": "git",
