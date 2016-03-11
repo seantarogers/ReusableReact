@@ -15,7 +15,7 @@ webpack-dev-server --history-api-fallback
 
 ## Credits
 
-[Decorator pattern from gaearon](https://github.com/gaearon/flux-react-router-example/blob/master/scripts/utils/connectToStores.js)
+[Decorator pattern from flux-react-router-example](https://github.com/gaearon/flux-react-router-example/blob/master/scripts/utils/connectToStores.js)
 
 
 
