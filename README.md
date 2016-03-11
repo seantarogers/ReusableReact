@@ -7,10 +7,11 @@ Simple SPA to experiment with composition via higher order components, with the 
 ```javascript
 npm install
 ```
- * Run the UI via webpack
+ * Run the UI via webpack-dev-server
 ```javascript
 npm run start
 ```
+and browse to http://localhost:8080/1
  * Run the API via IIS Express in Visual Studio
 
 ## Credits
